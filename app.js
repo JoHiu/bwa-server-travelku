@@ -6,6 +6,7 @@ var logger = require("morgan");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const flash = require("connect-flash");
+const cors = require("cors");
 // import mongoose
 const mongoose = require("mongoose");
 mongoose.connect(
@@ -70,7 +71,5 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-module.exports = app;
-
-const cors = require("cors");
 app.use(cors());
+module.exports = app;
